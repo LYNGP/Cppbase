@@ -4,6 +4,8 @@
 命名空间就是一个可以由用户自己定义的作用域，在不同的作用域中可以定义相同名字的变量，互不干扰，系统能够区分它们。
 使用方法：
 ```C++
+using namespace std; //using编译指令
+
 using std::cout;
 using std::endl;
 ```

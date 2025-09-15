@@ -8,6 +8,10 @@ namespace wd
     {
         fmt::print("func\n");
     }
+    namespace guopeng
+    {
+        int num = 888;
+    }
 }
 namespace huawei
 {
@@ -27,8 +31,17 @@ void test0()
     huawei::func();
 }
 
+void test1()
+{
+    fmt::print("test1\n");
+    using namespace wd;
+    fmt::print("wd::num = {}\n", num);
+    fmt::print("guopeng::num = {}\n", guopeng::num);
+}
+
 int main(int argc, char *argv[])
 {
-    test0();
+    // test0();
+    test1();
     return 0;
 }
