@@ -5,7 +5,7 @@
             "type": "cppdbg",
             "request": "launch",
             // "program": "${workspaceFolder}/demo", // 将要进行调试的程序的路径
-            "program": "${workspaceFolder}/bin/1_base", // 将要进行调试的程序的路径
+            "program": "${workspaceFolder}/bin/3_const", // 将要进行调试的程序的路径
             "args": [], // 程序调试时传递给程序的命令行参数，一般设为空即可
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}/src", // 调试程序时的工作目录

@@ -117,41 +117,41 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named 2_namespace
+# Target rules for targets named 3_const
 
 # Build rule for target.
-2_namespace: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 2_namespace
-.PHONY : 2_namespace
+3_const: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3_const
+.PHONY : 3_const
 
 # fast build rule for target.
-2_namespace/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2_namespace.dir/build.make CMakeFiles/2_namespace.dir/build
-.PHONY : 2_namespace/fast
+3_const/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3_const.dir/build.make CMakeFiles/3_const.dir/build
+.PHONY : 3_const/fast
 
-src/2_namespace.o: src/2_namespace.cc.o
-.PHONY : src/2_namespace.o
+src/3_const.o: src/3_const.cc.o
+.PHONY : src/3_const.o
 
 # target to build an object file
-src/2_namespace.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2_namespace.dir/build.make CMakeFiles/2_namespace.dir/src/2_namespace.cc.o
-.PHONY : src/2_namespace.cc.o
+src/3_const.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3_const.dir/build.make CMakeFiles/3_const.dir/src/3_const.cc.o
+.PHONY : src/3_const.cc.o
 
-src/2_namespace.i: src/2_namespace.cc.i
-.PHONY : src/2_namespace.i
+src/3_const.i: src/3_const.cc.i
+.PHONY : src/3_const.i
 
 # target to preprocess a source file
-src/2_namespace.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2_namespace.dir/build.make CMakeFiles/2_namespace.dir/src/2_namespace.cc.i
-.PHONY : src/2_namespace.cc.i
+src/3_const.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3_const.dir/build.make CMakeFiles/3_const.dir/src/3_const.cc.i
+.PHONY : src/3_const.cc.i
 
-src/2_namespace.s: src/2_namespace.cc.s
-.PHONY : src/2_namespace.s
+src/3_const.s: src/3_const.cc.s
+.PHONY : src/3_const.s
 
 # target to generate assembly for a file
-src/2_namespace.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2_namespace.dir/build.make CMakeFiles/2_namespace.dir/src/2_namespace.cc.s
-.PHONY : src/2_namespace.cc.s
+src/3_const.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3_const.dir/build.make CMakeFiles/3_const.dir/src/3_const.cc.s
+.PHONY : src/3_const.cc.s
 
 # Help Target
 help:
@@ -161,10 +161,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... 2_namespace"
-	@echo "... src/2_namespace.o"
-	@echo "... src/2_namespace.i"
-	@echo "... src/2_namespace.s"
+	@echo "... 3_const"
+	@echo "... src/3_const.o"
+	@echo "... src/3_const.i"
+	@echo "... src/3_const.s"
 .PHONY : help
 
 

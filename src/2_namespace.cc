@@ -36,7 +36,7 @@ void test1()
     fmt::print("test1\n");
     using namespace wd;
     fmt::print("wd::num = {}\n", num);
-    fmt::print("guopeng::num = {}\n", guopeng::num);
+    fmt::print("wd::guopeng::num = {}\n", guopeng::num);
 }
 
 int main(int argc, char *argv[])
