@@ -1,0 +1,3 @@
+/home/HwHiAiUser/gp/C_C++/QT/Cppbase/build/CMakeFiles/1_base.dir
+/home/HwHiAiUser/gp/C_C++/QT/Cppbase/build/CMakeFiles/edit_cache.dir
+/home/HwHiAiUser/gp/C_C++/QT/Cppbase/build/CMakeFiles/rebuild_cache.dir
