@@ -117,41 +117,41 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named 1_base
+# Target rules for targets named 2_namespace
 
 # Build rule for target.
-1_base: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 1_base
-.PHONY : 1_base
+2_namespace: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 2_namespace
+.PHONY : 2_namespace
 
 # fast build rule for target.
-1_base/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/1_base.dir/build.make CMakeFiles/1_base.dir/build
-.PHONY : 1_base/fast
+2_namespace/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2_namespace.dir/build.make CMakeFiles/2_namespace.dir/build
+.PHONY : 2_namespace/fast
 
-src/1_base.o: src/1_base.cpp.o
-.PHONY : src/1_base.o
+src/2_namespace.o: src/2_namespace.cc.o
+.PHONY : src/2_namespace.o
 
 # target to build an object file
-src/1_base.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/1_base.dir/build.make CMakeFiles/1_base.dir/src/1_base.cpp.o
-.PHONY : src/1_base.cpp.o
+src/2_namespace.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2_namespace.dir/build.make CMakeFiles/2_namespace.dir/src/2_namespace.cc.o
+.PHONY : src/2_namespace.cc.o
 
-src/1_base.i: src/1_base.cpp.i
-.PHONY : src/1_base.i
+src/2_namespace.i: src/2_namespace.cc.i
+.PHONY : src/2_namespace.i
 
 # target to preprocess a source file
-src/1_base.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/1_base.dir/build.make CMakeFiles/1_base.dir/src/1_base.cpp.i
-.PHONY : src/1_base.cpp.i
+src/2_namespace.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2_namespace.dir/build.make CMakeFiles/2_namespace.dir/src/2_namespace.cc.i
+.PHONY : src/2_namespace.cc.i
 
-src/1_base.s: src/1_base.cpp.s
-.PHONY : src/1_base.s
+src/2_namespace.s: src/2_namespace.cc.s
+.PHONY : src/2_namespace.s
 
 # target to generate assembly for a file
-src/1_base.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/1_base.dir/build.make CMakeFiles/1_base.dir/src/1_base.cpp.s
-.PHONY : src/1_base.cpp.s
+src/2_namespace.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2_namespace.dir/build.make CMakeFiles/2_namespace.dir/src/2_namespace.cc.s
+.PHONY : src/2_namespace.cc.s
 
 # Help Target
 help:
@@ -161,10 +161,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... 1_base"
-	@echo "... src/1_base.o"
-	@echo "... src/1_base.i"
-	@echo "... src/1_base.s"
+	@echo "... 2_namespace"
+	@echo "... src/2_namespace.o"
+	@echo "... src/2_namespace.i"
+	@echo "... src/2_namespace.s"
 .PHONY : help
 
 
