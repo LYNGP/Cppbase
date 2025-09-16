@@ -46,23 +46,50 @@ const int * const p4 = &number1;//两者皆不能进行修改
 #### 4. C/C++申请、释放堆空间的方式对比
 
 ```bash
-valgrind --tool=memcheck ./bin/3_const
+# vim ~/.bashrc
+# source ~/.bashrc 
+# alias memcheck='valgrind --tool=memcheck --leak-check=full --show-reachable=yes'
+
+valgrind --tool=memcheck --leak-check=full --show-reachable=yes ./bin/4_malloc
+memcheck ./bin/4_malloc 
 ```
 
 ```log
-==776004== Memcheck, a memory error detector
-==776004== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==776004== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==776004== Command: ./bin/3_const
-==776004== 
-num = 20, p1 = 0x1ffefff300
-==776004== 
-==776004== HEAP SUMMARY:
-==776004==     in use at exit: 0 bytes in 0 blocks
-==776004==   total heap usage: 2 allocs, 2 frees, 73,728 bytes allocated
-==776004== 
-==776004== All heap blocks were freed -- no leaks are possible
-==776004== 
-==776004== For lists of detected and suppressed errors, rerun with: -s
-==776004== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==816204== Memcheck, a memory error detector
+==816204== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==816204== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==816204== Command: ./bin/4_malloc
+==816204== 
+10
+20
+==816204== 
+==816204== HEAP SUMMARY:
+==816204==     in use at exit: 4 bytes in 1 blocks
+==816204==   total heap usage: 4 allocs, 3 frees, 73,736 bytes allocated
+==816204== 
+==816204== 4 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==816204==    at 0x48657B8: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==816204==    by 0x108B03: test1() (4_malloc.cc:15)
+==816204==    by 0x108B5F: main (4_malloc.cc:23)
+==816204== 
+==816204== LEAK SUMMARY:
+==816204==    definitely lost: 4 bytes in 1 blocks
+==816204==    indirectly lost: 0 bytes in 0 blocks
+==816204==      possibly lost: 0 bytes in 0 blocks
+==816204==    still reachable: 0 bytes in 0 blocks
+==816204==         suppressed: 0 bytes in 0 blocks
+==816204== 
+==816204== For lists of detected and suppressed errors, rerun with: -s
+==816204== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+```
+
+[malloc/free和new/delete的区别]
+1. malloc/free是库函数；new/delete是表达式，后两者使用时不是函数的写法；
+2. new表达式的返回值是相应类型的指针，malloc返回值是void*；
+3. malloc申请的空间不会进行初始化，获取到的空间是有脏数据的，但new表达式申请空间时可以直接初始化；
+4. malloc的参数是字节数，new表达式不需要传递字节数，会根据相应类型自动获取空间大小。
+
+C++11之后使用nullptr表示空指针
+```C++
+int* p = nullptr;
 ```

@@ -117,41 +117,41 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named 3_const
+# Target rules for targets named 4_malloc
 
 # Build rule for target.
-3_const: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3_const
-.PHONY : 3_const
+4_malloc: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 4_malloc
+.PHONY : 4_malloc
 
 # fast build rule for target.
-3_const/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/3_const.dir/build.make CMakeFiles/3_const.dir/build
-.PHONY : 3_const/fast
+4_malloc/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/4_malloc.dir/build.make CMakeFiles/4_malloc.dir/build
+.PHONY : 4_malloc/fast
 
-src/3_const.o: src/3_const.cc.o
-.PHONY : src/3_const.o
+src/4_malloc.o: src/4_malloc.cc.o
+.PHONY : src/4_malloc.o
 
 # target to build an object file
-src/3_const.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/3_const.dir/build.make CMakeFiles/3_const.dir/src/3_const.cc.o
-.PHONY : src/3_const.cc.o
+src/4_malloc.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/4_malloc.dir/build.make CMakeFiles/4_malloc.dir/src/4_malloc.cc.o
+.PHONY : src/4_malloc.cc.o
 
-src/3_const.i: src/3_const.cc.i
-.PHONY : src/3_const.i
+src/4_malloc.i: src/4_malloc.cc.i
+.PHONY : src/4_malloc.i
 
 # target to preprocess a source file
-src/3_const.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/3_const.dir/build.make CMakeFiles/3_const.dir/src/3_const.cc.i
-.PHONY : src/3_const.cc.i
+src/4_malloc.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/4_malloc.dir/build.make CMakeFiles/4_malloc.dir/src/4_malloc.cc.i
+.PHONY : src/4_malloc.cc.i
 
-src/3_const.s: src/3_const.cc.s
-.PHONY : src/3_const.s
+src/4_malloc.s: src/4_malloc.cc.s
+.PHONY : src/4_malloc.s
 
 # target to generate assembly for a file
-src/3_const.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/3_const.dir/build.make CMakeFiles/3_const.dir/src/3_const.cc.s
-.PHONY : src/3_const.cc.s
+src/4_malloc.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/4_malloc.dir/build.make CMakeFiles/4_malloc.dir/src/4_malloc.cc.s
+.PHONY : src/4_malloc.cc.s
 
 # Help Target
 help:
@@ -161,10 +161,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... 3_const"
-	@echo "... src/3_const.o"
-	@echo "... src/3_const.i"
-	@echo "... src/3_const.s"
+	@echo "... 4_malloc"
+	@echo "... src/4_malloc.o"
+	@echo "... src/4_malloc.i"
+	@echo "... src/4_malloc.s"
 .PHONY : help
 
 
