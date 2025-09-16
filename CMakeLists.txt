@@ -12,7 +12,8 @@ find_package(fmt REQUIRED)
 # add_executable(1_base src/1_base.cpp)
 # add_executable(2_namespace src/2_namespace.cc)
 # add_executable(3_const src/3_const.cc)
-add_executable(4_malloc src/4_malloc.cc)
+# add_executable(4_malloc src/4_malloc.cc)
+add_executable(5_reference src/5_reference.cc)
 
 
 # 链接 pthread
@@ -22,7 +23,8 @@ add_executable(4_malloc src/4_malloc.cc)
 # target_link_libraries(1_base fmt::fmt) 
 # target_link_libraries(2_namespace fmt::fmt) 
 # target_link_libraries(3_const fmt::fmt) 
-target_link_libraries(4_malloc fmt::fmt) 
+# target_link_libraries(4_malloc fmt::fmt) 
+target_link_libraries(5_reference fmt::fmt) 
 
 # 调试信息
 set(CMAKE_BUILD_TYPE Debug)

@@ -15,6 +15,8 @@ void test1()
     int *p2 = new int(20);
     cout << *p2 << endl;
     delete p2;
+    //安全回收
+    p2 = nullptr;
 }
 //new 为数组申请空间
 void test2()
