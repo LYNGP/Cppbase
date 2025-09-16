@@ -28,11 +28,10 @@ const常量有具体的类型，在编译期会执行类型检查。
 
 [修饰指针类型*]
 
-三种形式：const int * p      int const * p1      int * const p2
-
 ```C++
 int number1 = 10;
 int number2 = 20;
+
 const int * p1 = &number1;//常量指针
 *p1 = 100;//error 通过p1指针无法修改其所指内容的值
 p1 = &numbers;//ok 可以改变p1指针的指向
@@ -42,4 +41,28 @@ int * const p3 = &number1;//指针常量
 *p3 = 100;//ok 通过p3指针可以修改其所指内容的值
 p3 = &number2;//error 不可以改变p1指针的指向
 const int * const p4 = &number1;//两者皆不能进行修改
+```
+
+#### 4. C/C++申请、释放堆空间的方式对比
+
+```bash
+valgrind --tool=memcheck ./bin/3_const
+```
+
+```log
+==776004== Memcheck, a memory error detector
+==776004== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==776004== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==776004== Command: ./bin/3_const
+==776004== 
+num = 20, p1 = 0x1ffefff300
+==776004== 
+==776004== HEAP SUMMARY:
+==776004==     in use at exit: 0 bytes in 0 blocks
+==776004==   total heap usage: 2 allocs, 2 frees, 73,728 bytes allocated
+==776004== 
+==776004== All heap blocks were freed -- no leaks are possible
+==776004== 
+==776004== For lists of detected and suppressed errors, rerun with: -s
+==776004== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 ```
