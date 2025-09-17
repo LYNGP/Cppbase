@@ -16,7 +16,10 @@ find_package(fmt REQUIRED)
 # add_executable(5_reference src/5_reference.cc)
 # add_executable(6_cast src/6_cast.cc)
 
-add_executable(1_class src/1_class.cc)
+# add_executable(1_class src/1_class.cc)
+# add_executable(2_1constructor src/2_1constructor.cc)
+# add_executable(2_2classwithpoint src/2_2classwithpoint.cc)
+add_executable(2_3copyconst src/2_3copyconst.cc)
 
 
 # 链接 pthread
@@ -30,7 +33,10 @@ add_executable(1_class src/1_class.cc)
 # target_link_libraries(5_reference fmt::fmt) 
 # target_link_libraries(6_cast fmt::fmt) 
 
-target_link_libraries(1_class fmt::fmt) 
+# target_link_libraries(1_class fmt::fmt) 
+# target_link_libraries(2_1constructor fmt::fmt) 
+# target_link_libraries(2_2classwithpoint fmt::fmt) 
+target_link_libraries(2_3copyconst fmt::fmt) 
 
 # 调试信息
 set(CMAKE_BUILD_TYPE Debug)
