@@ -1,30 +1,45 @@
-#include "cplusplus.hpp"
-#include "computer.hpp"
+#include <iostream>
 
-using std::cout;
-using std::endl;
+using namespace std;
 
-void test0()
+class Point
 {
-    Computer pc("xioami", 10000);
-    pc.print();
-    Computer pc2(pc);
-    pc2.print();
-    Computer pc3 = pc;
-    pc3.print();
-}
-
-class E
-{
-    double _e;
-    char _eArr[20];
-    int _e2;
-    double _e1;
+public:
+    static Point & getInstance(){
+        static Point pt(1,2);
+        return pt;
+    }
+    
+    void print() const{
+        cout << "(" << this->_ix
+            << "," << this->_iy
+            << ")" << endl;
+    }
+    
+private:
+     Point(int x,int y)
+    : _ix(x)
+    , _iy(y)
+    {
+        cout << "Point(int,int)" << endl;
+    }
+private:
+    int _ix;
+    int _iy;
 };
 
-int main()
-{
+void test0(){
+    Point & pt = Point::getInstance();
+    pt.print();
+
+    Point & pt2 = Point::getInstance();
+    pt2.print();
+
+    cout << &pt << endl;
+    cout << &pt2 << endl;
+}
+
+int main(){
     test0();
-    // cout << sizeof(E) << endl;
     return 0;
 }

@@ -83,17 +83,33 @@ CMakeFiles/core_lib.dir/src/computer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core_lib.dir/src/computer.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/HwHiAiUser/gp/C_C++/QT/Cppbase/src/computer.cpp -o CMakeFiles/core_lib.dir/src/computer.cpp.s
 
+CMakeFiles/core_lib.dir/src/log.cpp.o: CMakeFiles/core_lib.dir/flags.make
+CMakeFiles/core_lib.dir/src/log.cpp.o: ../src/log.cpp
+CMakeFiles/core_lib.dir/src/log.cpp.o: CMakeFiles/core_lib.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/HwHiAiUser/gp/C_C++/QT/Cppbase/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/core_lib.dir/src/log.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/core_lib.dir/src/log.cpp.o -MF CMakeFiles/core_lib.dir/src/log.cpp.o.d -o CMakeFiles/core_lib.dir/src/log.cpp.o -c /home/HwHiAiUser/gp/C_C++/QT/Cppbase/src/log.cpp
+
+CMakeFiles/core_lib.dir/src/log.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/core_lib.dir/src/log.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/HwHiAiUser/gp/C_C++/QT/Cppbase/src/log.cpp > CMakeFiles/core_lib.dir/src/log.cpp.i
+
+CMakeFiles/core_lib.dir/src/log.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core_lib.dir/src/log.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/HwHiAiUser/gp/C_C++/QT/Cppbase/src/log.cpp -o CMakeFiles/core_lib.dir/src/log.cpp.s
+
 # Object files for target core_lib
 core_lib_OBJECTS = \
-"CMakeFiles/core_lib.dir/src/computer.cpp.o"
+"CMakeFiles/core_lib.dir/src/computer.cpp.o" \
+"CMakeFiles/core_lib.dir/src/log.cpp.o"
 
 # External object files for target core_lib
 core_lib_EXTERNAL_OBJECTS =
 
 libcore_lib.a: CMakeFiles/core_lib.dir/src/computer.cpp.o
+libcore_lib.a: CMakeFiles/core_lib.dir/src/log.cpp.o
 libcore_lib.a: CMakeFiles/core_lib.dir/build.make
 libcore_lib.a: CMakeFiles/core_lib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/HwHiAiUser/gp/C_C++/QT/Cppbase/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libcore_lib.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/HwHiAiUser/gp/C_C++/QT/Cppbase/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libcore_lib.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/core_lib.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/core_lib.dir/link.txt --verbose=$(VERBOSE)
 

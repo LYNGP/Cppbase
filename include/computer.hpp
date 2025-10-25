@@ -73,14 +73,21 @@ public:
 	{
 		cout << "有参构造函数 --> 初始化" << endl;
 	}
-	Computer(const Computer &other) // 拷贝构造函数
+	
+	Computer(const Computer &other) // 拷贝构造函数（默认）
 		: _brand(other._brand), _price(other._price)
 	{
 		cout << "拷贝构造函数 --> 初始化" << endl;
 	}
 	// 不需要手动管理内存了！
+
 	void print(); // 打印信息
 
+	Computer & operator=(const Computer & rhs){//默认赋值运算符函数
+		this->_brand = rhs._brand;
+		this->_price = rhs._price;
+		return *this;
+	}
 private:
 	string _brand; // 自动内存管理
 	double _price;

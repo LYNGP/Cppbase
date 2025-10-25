@@ -19,4 +19,7 @@ target_include_directories(core_lib PUBLIC ${PROJECT_SOURCE_DIR}/include)
 add_executable(lyn src/main.cpp)
 target_link_libraries(lyn PRIVATE core_lib fmt::fmt)
 
-set(CMAKE_BUILD_TYPE Debug)
+# Debug 模式下启用调试日志
+if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+    target_compile_definitions(core_lib PRIVATE DEBUG)
+endif()

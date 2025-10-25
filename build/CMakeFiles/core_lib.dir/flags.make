@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/HwHiAiUser/gp/C_C++/QT/Cppbase/include
 
-CXX_FLAGS = -g
+CXX_FLAGS = 
 

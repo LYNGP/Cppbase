@@ -6,5 +6,5 @@ CXX_DEFINES = -DFMT_LOCALE -DFMT_SHARED
 
 CXX_INCLUDES = -I/home/HwHiAiUser/gp/C_C++/QT/Cppbase/include
 
-CXX_FLAGS = -g
+CXX_FLAGS = 
 
