@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named core_lib
+
+# Build rule for target.
+core_lib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core_lib
+.PHONY : core_lib
+
+# fast build rule for target.
+core_lib/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_lib.dir/build.make CMakeFiles/core_lib.dir/build
+.PHONY : core_lib/fast
+
+#=============================================================================
 # Target rules for targets named lyn
 
 # Build rule for target.
@@ -128,6 +141,30 @@ lyn: cmake_check_build_system
 lyn/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lyn.dir/build.make CMakeFiles/lyn.dir/build
 .PHONY : lyn/fast
+
+src/computer.o: src/computer.cpp.o
+.PHONY : src/computer.o
+
+# target to build an object file
+src/computer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_lib.dir/build.make CMakeFiles/core_lib.dir/src/computer.cpp.o
+.PHONY : src/computer.cpp.o
+
+src/computer.i: src/computer.cpp.i
+.PHONY : src/computer.i
+
+# target to preprocess a source file
+src/computer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_lib.dir/build.make CMakeFiles/core_lib.dir/src/computer.cpp.i
+.PHONY : src/computer.cpp.i
+
+src/computer.s: src/computer.cpp.s
+.PHONY : src/computer.s
+
+# target to generate assembly for a file
+src/computer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_lib.dir/build.make CMakeFiles/core_lib.dir/src/computer.cpp.s
+.PHONY : src/computer.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -161,7 +198,11 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... core_lib"
 	@echo "... lyn"
+	@echo "... src/computer.o"
+	@echo "... src/computer.i"
+	@echo "... src/computer.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

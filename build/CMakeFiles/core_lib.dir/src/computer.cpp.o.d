@@ -1,10 +1,9 @@
-CMakeFiles/lyn.dir/src/main.cpp.o: \
- /home/HwHiAiUser/gp/C_C++/QT/Cppbase/src/main.cpp \
+CMakeFiles/core_lib.dir/src/computer.cpp.o: \
+ /home/HwHiAiUser/gp/C_C++/QT/Cppbase/src/computer.cpp \
  /usr/include/stdc-predef.h \
- /home/HwHiAiUser/gp/C_C++/QT/Cppbase/include/cplusplus.hpp \
- /usr/include/c++/11/iostream \
- /usr/include/aarch64-linux-gnu/c++/11/bits/c++config.h \
- /usr/include/aarch64-linux-gnu/c++/11/bits/os_defines.h \
+ /home/HwHiAiUser/gp/C_C++/QT/Cppbase/include/computer.hpp \
+ /usr/include/string.h \
+ /usr/include/aarch64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
  /usr/include/aarch64-linux-gnu/bits/wordsize.h \
  /usr/include/aarch64-linux-gnu/bits/timesize.h \
@@ -12,16 +11,20 @@ CMakeFiles/lyn.dir/src/main.cpp.o: \
  /usr/include/aarch64-linux-gnu/bits/long-double.h \
  /usr/include/aarch64-linux-gnu/gnu/stubs.h \
  /usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h \
+ /usr/lib/gcc/aarch64-linux-gnu/11/include/stddef.h \
+ /usr/include/aarch64-linux-gnu/bits/types/locale_t.h \
+ /usr/include/aarch64-linux-gnu/bits/types/__locale_t.h \
+ /usr/include/strings.h /usr/include/c++/11/iostream \
+ /usr/include/aarch64-linux-gnu/c++/11/bits/c++config.h \
+ /usr/include/aarch64-linux-gnu/c++/11/bits/os_defines.h \
  /usr/include/aarch64-linux-gnu/c++/11/bits/cpu_defines.h \
  /usr/include/c++/11/pstl/pstl_config.h /usr/include/c++/11/ostream \
  /usr/include/c++/11/ios /usr/include/c++/11/iosfwd \
  /usr/include/c++/11/bits/stringfwd.h \
  /usr/include/c++/11/bits/memoryfwd.h /usr/include/c++/11/bits/postypes.h \
  /usr/include/c++/11/cwchar /usr/include/wchar.h \
- /usr/include/aarch64-linux-gnu/bits/libc-header-start.h \
  /usr/include/aarch64-linux-gnu/bits/floatn.h \
  /usr/include/aarch64-linux-gnu/bits/floatn-common.h \
- /usr/lib/gcc/aarch64-linux-gnu/11/include/stddef.h \
  /usr/lib/gcc/aarch64-linux-gnu/11/include/stdarg.h \
  /usr/include/aarch64-linux-gnu/bits/wchar.h \
  /usr/include/aarch64-linux-gnu/bits/types/wint_t.h \
@@ -29,8 +32,6 @@ CMakeFiles/lyn.dir/src/main.cpp.o: \
  /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h \
  /usr/include/aarch64-linux-gnu/bits/types/__FILE.h \
  /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
- /usr/include/aarch64-linux-gnu/bits/types/locale_t.h \
- /usr/include/aarch64-linux-gnu/bits/types/__locale_t.h \
  /usr/include/c++/11/exception /usr/include/c++/11/bits/exception.h \
  /usr/include/c++/11/bits/exception_ptr.h \
  /usr/include/c++/11/bits/exception_defines.h \
@@ -148,8 +149,9 @@ CMakeFiles/lyn.dir/src/main.cpp.o: \
  /usr/include/c++/11/bits/locale_facets.tcc \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
- /usr/include/c++/11/bits/istream.tcc /usr/include/fmt/format.h \
- /usr/include/c++/11/cmath /usr/include/math.h \
+ /usr/include/c++/11/bits/istream.tcc \
+ /home/HwHiAiUser/gp/C_C++/QT/Cppbase/include/cplusplus.hpp \
+ /usr/include/fmt/format.h /usr/include/c++/11/cmath /usr/include/math.h \
  /usr/include/aarch64-linux-gnu/bits/math-vector.h \
  /usr/include/aarch64-linux-gnu/bits/libm-simd-decl-stubs.h \
  /usr/include/aarch64-linux-gnu/bits/flt-eval-method.h \
@@ -193,7 +195,6 @@ CMakeFiles/lyn.dir/src/main.cpp.o: \
  /usr/include/c++/11/pstl/glue_memory_defs.h \
  /usr/include/c++/11/pstl/execution_defs.h /usr/include/fmt/core.h \
  /usr/include/c++/11/cstddef /usr/include/c++/11/cstring \
- /usr/include/string.h /usr/include/strings.h \
  /usr/include/c++/11/iterator /usr/include/c++/11/bits/stream_iterator.h \
  /usr/include/fmt/chrono.h /usr/include/c++/11/algorithm \
  /usr/include/c++/11/bits/stl_algo.h \
@@ -218,5 +219,4 @@ CMakeFiles/lyn.dir/src/main.cpp.o: \
  /usr/include/aarch64-linux-gnu/c++/11/bits/messages_members.h \
  /usr/include/libintl.h /usr/include/c++/11/bits/codecvt.h \
  /usr/include/c++/11/bits/locale_facets_nonio.tcc \
- /usr/include/c++/11/bits/locale_conv.h /usr/include/fmt/format.h \
- /home/HwHiAiUser/gp/C_C++/QT/Cppbase/include/computer.hpp
+ /usr/include/c++/11/bits/locale_conv.h /usr/include/fmt/format.h
