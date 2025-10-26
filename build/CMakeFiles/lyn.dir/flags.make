@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DFMT_LOCALE -DFMT_SHARED
 
-CXX_INCLUDES = -I/home/ubuntu/guopeng/Cppbase/include
+CXX_INCLUDES = -I/home/HwHiAiUser/gp/Cppbase/include
 
 CXX_FLAGS = 
 

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/guopeng/Cppbase
+CMAKE_SOURCE_DIR = /home/HwHiAiUser/gp/Cppbase
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/guopeng/Cppbase/build
+CMAKE_BINARY_DIR = /home/HwHiAiUser/gp/Cppbase/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/core_lib.dir/depend.make
@@ -72,30 +72,30 @@ include CMakeFiles/core_lib.dir/flags.make
 CMakeFiles/core_lib.dir/src/computer.cpp.o: CMakeFiles/core_lib.dir/flags.make
 CMakeFiles/core_lib.dir/src/computer.cpp.o: ../src/computer.cpp
 CMakeFiles/core_lib.dir/src/computer.cpp.o: CMakeFiles/core_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/guopeng/Cppbase/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/core_lib.dir/src/computer.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/core_lib.dir/src/computer.cpp.o -MF CMakeFiles/core_lib.dir/src/computer.cpp.o.d -o CMakeFiles/core_lib.dir/src/computer.cpp.o -c /home/ubuntu/guopeng/Cppbase/src/computer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/HwHiAiUser/gp/Cppbase/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/core_lib.dir/src/computer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/core_lib.dir/src/computer.cpp.o -MF CMakeFiles/core_lib.dir/src/computer.cpp.o.d -o CMakeFiles/core_lib.dir/src/computer.cpp.o -c /home/HwHiAiUser/gp/Cppbase/src/computer.cpp
 
 CMakeFiles/core_lib.dir/src/computer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/core_lib.dir/src/computer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/guopeng/Cppbase/src/computer.cpp > CMakeFiles/core_lib.dir/src/computer.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/HwHiAiUser/gp/Cppbase/src/computer.cpp > CMakeFiles/core_lib.dir/src/computer.cpp.i
 
 CMakeFiles/core_lib.dir/src/computer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core_lib.dir/src/computer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/guopeng/Cppbase/src/computer.cpp -o CMakeFiles/core_lib.dir/src/computer.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/HwHiAiUser/gp/Cppbase/src/computer.cpp -o CMakeFiles/core_lib.dir/src/computer.cpp.s
 
 CMakeFiles/core_lib.dir/src/log.cpp.o: CMakeFiles/core_lib.dir/flags.make
 CMakeFiles/core_lib.dir/src/log.cpp.o: ../src/log.cpp
 CMakeFiles/core_lib.dir/src/log.cpp.o: CMakeFiles/core_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/guopeng/Cppbase/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/core_lib.dir/src/log.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/core_lib.dir/src/log.cpp.o -MF CMakeFiles/core_lib.dir/src/log.cpp.o.d -o CMakeFiles/core_lib.dir/src/log.cpp.o -c /home/ubuntu/guopeng/Cppbase/src/log.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/HwHiAiUser/gp/Cppbase/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/core_lib.dir/src/log.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/core_lib.dir/src/log.cpp.o -MF CMakeFiles/core_lib.dir/src/log.cpp.o.d -o CMakeFiles/core_lib.dir/src/log.cpp.o -c /home/HwHiAiUser/gp/Cppbase/src/log.cpp
 
 CMakeFiles/core_lib.dir/src/log.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/core_lib.dir/src/log.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/guopeng/Cppbase/src/log.cpp > CMakeFiles/core_lib.dir/src/log.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/HwHiAiUser/gp/Cppbase/src/log.cpp > CMakeFiles/core_lib.dir/src/log.cpp.i
 
 CMakeFiles/core_lib.dir/src/log.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core_lib.dir/src/log.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/guopeng/Cppbase/src/log.cpp -o CMakeFiles/core_lib.dir/src/log.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/HwHiAiUser/gp/Cppbase/src/log.cpp -o CMakeFiles/core_lib.dir/src/log.cpp.s
 
 # Object files for target core_lib
 core_lib_OBJECTS = \
@@ -109,7 +109,7 @@ libcore_lib.a: CMakeFiles/core_lib.dir/src/computer.cpp.o
 libcore_lib.a: CMakeFiles/core_lib.dir/src/log.cpp.o
 libcore_lib.a: CMakeFiles/core_lib.dir/build.make
 libcore_lib.a: CMakeFiles/core_lib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/guopeng/Cppbase/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libcore_lib.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/HwHiAiUser/gp/Cppbase/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libcore_lib.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/core_lib.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/core_lib.dir/link.txt --verbose=$(VERBOSE)
 
@@ -122,6 +122,6 @@ CMakeFiles/core_lib.dir/clean:
 .PHONY : CMakeFiles/core_lib.dir/clean
 
 CMakeFiles/core_lib.dir/depend:
-	cd /home/ubuntu/guopeng/Cppbase/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/guopeng/Cppbase /home/ubuntu/guopeng/Cppbase /home/ubuntu/guopeng/Cppbase/build /home/ubuntu/guopeng/Cppbase/build /home/ubuntu/guopeng/Cppbase/build/CMakeFiles/core_lib.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/HwHiAiUser/gp/Cppbase/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/HwHiAiUser/gp/Cppbase /home/HwHiAiUser/gp/Cppbase /home/HwHiAiUser/gp/Cppbase/build /home/HwHiAiUser/gp/Cppbase/build /home/HwHiAiUser/gp/Cppbase/build/CMakeFiles/core_lib.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/core_lib.dir/depend
 
