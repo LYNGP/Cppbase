@@ -1,4 +1,4 @@
-# Install script for directory: /home/HwHiAiUser/gp/C_C++/QT/Cppbase
+# Install script for directory: /home/ubuntu/guopeng/Cppbase
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/HwHiAiUser/gp/C_C++/QT/Cppbase/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ubuntu/guopeng/Cppbase/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

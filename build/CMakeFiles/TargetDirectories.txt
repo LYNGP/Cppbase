@@ -1,4 +1,4 @@
-/home/HwHiAiUser/gp/C_C++/QT/Cppbase/build/CMakeFiles/core_lib.dir
-/home/HwHiAiUser/gp/C_C++/QT/Cppbase/build/CMakeFiles/lyn.dir
-/home/HwHiAiUser/gp/C_C++/QT/Cppbase/build/CMakeFiles/edit_cache.dir
-/home/HwHiAiUser/gp/C_C++/QT/Cppbase/build/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/guopeng/Cppbase/build/CMakeFiles/core_lib.dir
+/home/ubuntu/guopeng/Cppbase/build/CMakeFiles/lyn.dir
+/home/ubuntu/guopeng/Cppbase/build/CMakeFiles/edit_cache.dir
+/home/ubuntu/guopeng/Cppbase/build/CMakeFiles/rebuild_cache.dir

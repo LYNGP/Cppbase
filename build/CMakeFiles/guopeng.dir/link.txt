@@ -1,1 +1,0 @@
-/usr/bin/c++ -g CMakeFiles/guopeng.dir/src/main.cpp.o -o ../guopeng  /usr/lib/aarch64-linux-gnu/libfmt.so.8.1.1 -Wl,--as-needed 

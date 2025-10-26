@@ -8,12 +8,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/HwHiAiUser/gp/C_C++/QT/Cppbase/src/main.cpp" "CMakeFiles/lyn.dir/src/main.cpp.o" "gcc" "CMakeFiles/lyn.dir/src/main.cpp.o.d"
+  "/home/ubuntu/guopeng/Cppbase/src/main.cpp" "CMakeFiles/lyn.dir/src/main.cpp.o" "gcc" "CMakeFiles/lyn.dir/src/main.cpp.o.d"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/HwHiAiUser/gp/C_C++/QT/Cppbase/build/CMakeFiles/core_lib.dir/DependInfo.cmake"
+  "/home/ubuntu/guopeng/Cppbase/build/CMakeFiles/core_lib.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

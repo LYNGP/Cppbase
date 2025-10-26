@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/HwHiAiUser/gp/C_C++/QT/Cppbase/include
+CXX_INCLUDES = -I/home/ubuntu/guopeng/Cppbase/include
 
 CXX_FLAGS = 
 
