@@ -1,0 +1,65 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <fmt/format.h>
+#include <limits>
+
+using std::cin;
+using std::cout;
+using std::endl;
+using std::istream;
+
+void print_stream_status(istream &is)
+{
+    fmt::print("stream status is good ? {}\n", is.good());
+    fmt::print("stream status is eof ? {}\n", is.eof());
+    fmt::print("stream status is fail? {}\n", is.fail());
+    fmt::print("stream status is bad ? {}\n", is.bad());
+    if (!cin.good())
+    {
+        cin.clear();            // 恢复状态
+        cin.ignore(1000, '\n'); // 清空缓冲区 必须包含<limits>头文件 --> ignore()第一个参数设置最大舍弃字符数 --> 第二个参数'\n'表示遇到换行符停止舍弃
+        // 或使用：cin.ignore(numeric_limits<streamsize>::max(), '\n')
+    }
+}
+
+void input_num(int &num)
+{
+    while (1)
+    {
+        cout << "请输入一个整数: ";
+        if (cin >> num)
+        { // 检查输入是否成功
+            cout << "你输入的是: " << num << endl;
+            break;
+        }
+        else
+        {
+            cout << "输入错误,请重试" << endl;
+
+            // 清除错误状态,准备下次输入
+            cin.clear();
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        }
+    }
+}
+void test0()
+{
+    int num = 0;
+    input_num(num);
+}
+int main()
+{
+    cout << "#-------------------------#" << endl;
+    test0();
+    return 0;
+    /*
+    #-------------------------#
+    请输入一个整数: g
+    输入错误,请重试
+    请输入一个整数: p
+    输入错误,请重试
+    请输入一个整数: 666
+    你输入的是: 666
+    */
+}
