@@ -262,3 +262,111 @@ int main()
     return 0;
 }
 ```
+
+```cpp
+{
+    vector<int> row = {1, 2, 3, 4, 5};
+    vector<int> row1 = {6, 7, 8, 9};
+    vector<int> row2 = {10, 11, 12, 13, 14, 15};
+
+    vector<vector<int>> matrix{row, row1, row2};
+
+    for (auto &row : matrix)
+    {
+        for (auto &item : row)
+        {
+            cout << item << " ";
+        }
+        cout << endl;
+    }
+    /*
+    #-------------------------#
+    1 2 3 4 5 
+    6 7 8 9 
+    10 11 12 13 14 15 
+    #-------------------------#
+    */
+}
+```
+
+## cppbase day04：
+
+[C++输入输出流]
+
+1. 流的四种状态：--> 只要badbit/failbit/eofbit任一被置位，流即不可用
+    goodbit：流处于有效工作状态（唯一可正常操作的状态） --> 等价于!fail() && !bad() && !eof()
+    failbit：可恢复错误（如期望读取int却输入字符串）
+    badbit： 系统级不可恢复错误（如硬件读写故障）
+    eofbit： 到达流结尾（如文件读取完毕）
+
+2. 标准输入输出流具有缓冲机制，缓冲区是内存预留的存储空间，用于临时存放IO数据。
+```cpp
+#include <iostream>
+#include <string>
+#include <vector>
+#include <fmt/format.h>
+#include <limits>
+
+using std::cin;
+using std::cout;
+using std::endl;
+using std::istream;
+
+void print_stream_status(istream &is)
+{
+    fmt::print("stream status is good ? {}\n", is.good());
+    fmt::print("stream status is eof ? {}\n", is.eof());
+    fmt::print("stream status is fail? {}\n", is.fail());
+    fmt::print("stream status is bad ? {}\n", is.bad());
+    if (!cin.good())
+    {
+        cin.clear();            // 恢复状态
+        cin.ignore(1000, '\n'); // 清空缓冲区 必须包含<limits>头文件 --> ignore()第一个参数设置最大舍弃字符数 --> 第二个参数'\n'表示遇到换行符停止舍弃
+        // 或使用：cin.ignore(numeric_limits<streamsize>::max(), '\n')
+    }
+}
+
+void input_num(int &num)
+{
+    while (1)
+    {
+        cout << "请输入一个整数: ";
+        if (cin >> num)
+        { // 检查输入是否成功
+            cout << "你输入的是: " << num << endl;
+            break;
+        }
+        else
+        {
+            cout << "输入错误,请重试" << endl;
+
+            // 清除错误状态,准备下次输入
+            cin.clear();
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        }
+    }
+}
+void test0()
+{
+    int num = 0;
+    input_num(num);
+}
+int main()
+{
+    cout << "#-------------------------#" << endl;
+    test0();
+    return 0;
+    /*
+    #-------------------------#
+    请输入一个整数: g
+    输入错误,请重试
+    请输入一个整数: p
+    输入错误,请重试
+    请输入一个整数: 666
+    你输入的是: 666
+    */
+}
+```
+
+3.  
+
