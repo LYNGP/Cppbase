@@ -111,17 +111,154 @@ Computer & operator=(const Computer & rhs){
 
 ## cppbase day03：
 [C++字符串-string] 
-    //字符检查函数(非修改式操作)
-    size_t strlen(const char *str);//返回str的长度，不包括null结束符
-    //比较lhs和rhs是否相同。lhs等于rhs,返回0; lhs大于rhs，返回正数; lhs小于rhs，返回负数
-    int strcmp(const char *lhs, const char *rhs);
-    int strncmp(const char *lhs, const char *rhs, size_t count);
-    //在str中查找首次出现ch字符的位置；查找不到，返回空指针
-    char *strchr(const char *str, int ch);
-    //在str中查找首次出现子串substr的位置；查找不到，返回空指针
-    char *strstr(const char* str, const char* substr);
-    //字符控制函数(修改式操作)
-    char *strcpy(char *dest, const char *src);//将src复制给dest，返回dest
-    char *strncpy(char *dest, const char *src, size_t count);
-    char *strcat(char *dest, const char *src);//concatenates two strings
-    char *strncat(char *dest, const char *src, size_t count);
+```cpp
+#include <iostream>
+#include <string>
+
+using std::cout;
+using std::endl;
+using std::string;
+
+void test0()
+{
+    string str1;             // 无参构造
+    string str2("hello");    // C风格字符串构造
+    string str3 = "hello";   // 隐式构造（本质是创建匿名对象后拷贝构造）
+    string str4("world", 3); // 前3个字符构造，结果为"wor"
+    string str5(str2);       // 拷贝构造
+    string str6(str2, 1, 3); // 从位置1开始复制3个字符，结果为"ell"
+    string str7(5, 'a');     // 生成"aaaaa"
+}
+void test1()
+{
+    char arr[] = "hello";
+    string s1(arr, arr + 4); //[0,4)
+    cout << s1 << endl;
+
+    auto it = s1.begin(); // string::iterator
+    auto it2 = s1.end();  // string::iterator
+    cout << *it << endl;
+
+    string s2(it, --it2); // [0,3)
+    cout << s2 << endl;
+}
+void test2()
+{
+    string s1 = "hello";
+    string s2 = "world";
+    string s3 = s1 + "," + s2 + "!"; // 加号操作涉及3次内存操作（创建临时对象+拷贝构造+销毁临时对象）
+    cout << s3 << endl;
+}
+void test3()
+{
+    string s1 = "hello ";
+    cout << s1.size() << endl;
+
+    s1.push_back('x');
+    cout << s1 << endl;
+
+    s1.append(" world"); // append仅1次内存操作（直接修改原对象）
+    cout << s1 << endl;
+}
+void test4()
+{
+    string s1 = "hello world";
+    // 通过下标遍历
+    for (size_t i = 0; i < s1.size(); ++i)
+    {
+        cout << s1[i] << " ";
+    }
+    cout << endl;
+    // 增强for循环遍历 **
+    for (auto &ch : s1) // & 代表操作的是元素本身，如果没有，则操作的是元素副本
+    {
+        cout << ch << " ";
+    }
+    cout << endl;
+    // 迭代器方式进行遍历
+    auto it = s1.begin();
+    while (it != s1.end())
+    {
+        cout << *it << " ";
+        ++it;
+    }
+    cout << endl;
+}
+int main()
+{
+    test0();
+    cout << "#-------------------------#" << endl;
+    test1();
+    cout << "#-------------------------#" << endl;
+    test2();
+    cout << "#-------------------------#" << endl;
+    test3();
+    cout << "#-------------------------#" << endl;
+    test4();
+    return 0;
+}
+```
+
+[std::vector] --> 动态数组，支持随机访问，元素可以是任意类型，支持迭代器。
+1. vector对象是由三个指针组成：
+    _start指向当前数组中第一个元素存放的位置
+    _finish指向当前数组中最后一个元素的下一个位置
+    _end_of_storage指向当前数组能够存放元素的最后一个空间的下一个位置
+
+    size():      _finish - _start
+    capacity():  _end_of_storage - start
+
+```cpp
+#include <iostream>
+#include <string>
+#include <vector>
+#include <fmt/format.h>
+
+using std::cout;
+using std::endl;
+using std::vector;
+
+void test0()
+{
+    // vector常用的几种构造形式
+    vector<int> v1;
+    vector<int> v2(10);
+    vector<int> v3(10, 20);
+    vector<int> v4{1, 2, 3, 4, 5};
+    vector<int> v5(v4.begin(), v4.end() - 2); //[0,3)
+
+    v2.push_back(30);
+    v2.push_back(40);
+    v2.pop_back();
+    fmt::print("v2 size: {}\n", v2.size());
+    fmt::print("v2 capacity: {}\n", v2.capacity()); // 扩容到原来的 1.5倍 或 2倍
+
+    // v2.shrink_to_fit();  //释放多余空间
+    // v2.clear();          //清空元素但不释放空间
+
+    for (auto &ele : v2)
+    {
+        cout << ele << " ";
+    }
+    cout << endl;
+
+    fmt::print("vector对象的大小: {}\n", sizeof(v3));
+    /*
+    #-------------------------#
+    v2 size: 11
+    v2 capacity: 20
+    0 0 0 0 0 0 0 0 0 0 30 
+    vector对象的大小: 24
+    #-------------------------#
+    */
+}
+
+int main()
+{
+    cout << "#-------------------------#" << endl;
+    test0();
+    cout << "#-------------------------#" << endl;
+
+    return 0;
+}
+```

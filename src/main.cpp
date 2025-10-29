@@ -1,59 +1,52 @@
 #include <iostream>
 #include <string>
+#include <vector>
+#include <fmt/format.h>
 
 using std::cout;
 using std::endl;
-using std::string;
+using std::vector;
 
 void test0()
 {
-    string str1;             // 无参构造
-    string str2("hello");    // C风格字符串构造
-    string str3 = "hello";   // 隐式构造（本质是创建匿名对象后拷贝构造）
-    string str4("world", 3); // 前3个字符构造，结果为"wor"
-    string str5(str2);       // 拷贝构造
-    string str6(str2, 1, 3); // 从位置1开始复制3个字符，结果为"ell"
-    string str7(5, 'a');     // 生成"aaaaa"
-}
-void test1()
-{
-    char arr[] = "hello";
-    string s1(arr, arr + 4); //[0,4)
-    cout << s1 << endl;
+    // vector常用的几种构造形式
+    vector<int> v1;
+    vector<int> v2(10);
+    vector<int> v3(10, 20);
+    vector<int> v4{1, 2, 3, 4, 5};
+    vector<int> v5(v4.begin(), v4.end() - 2); //[0,3)
 
-    auto it = s1.begin(); // string::iterator
-    auto it2 = s1.end();  // string::iterator
-    cout << *it << endl;
+    v2.push_back(30);
+    v2.push_back(40);
+    v2.pop_back();
+    fmt::print("v2 size: {}\n", v2.size());
+    fmt::print("v2 capacity: {}\n", v2.capacity()); // 扩容到原来的 1.5倍 或 2倍
 
-    string s2(it, --it2); // [0,3)
-    cout << s2 << endl;
-}
-void test2()
-{
-    string s1 = "hello";
-    string s2 = "world";
-    string s3 = s1 + "," + s2 + "!"; // 加号操作涉及3次内存操作（创建临时对象+拷贝构造+销毁临时对象）
-    cout << s3 << endl;
-}
-void test3()
-{
-    string s1 = "hello ";
-    cout << s1.size() << endl;
+    // v2.shrink_to_fit();  //释放多余空间
+    // v2.clear();          //清空元素但不释放空间
 
-    s1.push_back('x');
-    cout << s1 << endl;
+    for (auto &ele : v2)
+    {
+        cout << ele << " ";
+    }
+    cout << endl;
 
-    s1.append(" world"); // append仅1次内存操作（直接修改原对象）
-    cout << s1 << endl;
+    fmt::print("vector对象的大小: {}\n", sizeof(v3));
+    /*
+    #-------------------------#
+    v2 size: 11
+    v2 capacity: 20
+    0 0 0 0 0 0 0 0 0 0 30 
+    vector对象的大小: 24
+    #-------------------------#
+    */
 }
+
 int main()
 {
+    cout << "#-------------------------#" << endl;
     test0();
     cout << "#-------------------------#" << endl;
-    test1();
-    cout << "#-------------------------#" << endl;
-    test2();
-    cout << "#-------------------------#" << endl;
-    test3();
+
     return 0;
 }
