@@ -5,109 +5,55 @@ using std::cout;
 using std::endl;
 using std::string;
 
-void test0(){
-
-    // 声明并初始化字符串
-    string greeting = "Hello, World!";
-    cout << "Greeting: " << greeting << endl;
-
-    // 使用 size() 获取字符串长度
-    cout << "Length of the greeting: " << greeting.size() << endl;
-
-    // 使用 empty() 检查字符串是否为空
-    cout << "Is the greeting empty? " << (greeting.empty() ? "Yes" : "No") << endl;
-
-    // 使用 operator[] 访问特定位置的字符
-    cout << "Character at position 7: " << greeting[7] << endl;
-
-    // 使用 substr() 获取子字符串
-    string sub = greeting.substr(7, 5);
-    cout << "Substring from position 7 with length 5: " << sub << endl;
-
-    // 使用 find() 查找子字符串
-    cout << "Position of 'World' in the greeting: " << greeting.find("World") << endl;
-
-    // 使用 replace() 替换字符串中的部分内容
-    // 替换 'World' 为 'C++'
-    string modified = greeting;
-    string::size_type pos = modified.find("World");
-    if (pos != string::npos) {
-        modified.replace(pos, 5, "C++"); // 从位置 pos 开始，替换 5 个字符为 "C++"
-    }
-    cout << "Modified greeting: " << modified << endl;
+void test0()
+{
+    string str1;             // 无参构造
+    string str2("hello");    // C风格字符串构造
+    string str3 = "hello";   // 隐式构造（本质是创建匿名对象后拷贝构造）
+    string str4("world", 3); // 前3个字符构造，结果为"wor"
+    string str5(str2);       // 拷贝构造
+    string str6(str2, 1, 3); // 从位置1开始复制3个字符，结果为"ell"
+    string str7(5, 'a');     // 生成"aaaaa"
 }
-void test1(){
-    string str = "Hello, World!";
-   
-    // size()
-    cout << "Length: " << str.size() << endl;
+void test1()
+{
+    char arr[] = "hello";
+    string s1(arr, arr + 4); //[0,4)
+    cout << s1 << endl;
 
-    // empty()
-    cout << "Is empty? " << (str.empty() ? "Yes" : "No") << endl;
+    auto it = s1.begin(); // string::iterator
+    auto it2 = s1.end();  // string::iterator
+    cout << *it << endl;
 
-    // operator[]
-    cout << "First character: " << str[0] << endl;
-
-    // at()
-    cout << "Character at position 7: " << str.at(7) << endl;
-
-    // substr()
-    string sub = str.substr(7, 5);
-    cout << "Substring from position 7 with length 5: " << sub << endl;
-
-    // find()
-    size_t pos = str.find("World");
-    cout << "Position of 'World': " << pos << endl;
-
-    // replace()
-    str.replace(pos, 5, "C++");
-    cout << "Modified string: " << str << endl;
-
-    // append()
-    str.append(" How are you?");
-    cout << "Appended string: " << str << endl;
-
-    // insert()
-    str.insert(7, " Beautiful");
-    cout << "String after insert: " << str << endl;
-
-    // erase()
-    str.erase(7, 10);
-    cout << "String after erase: " << str << endl;
-
-    // clear()
-    str.clear();
-    cout << "String after clear: " << (str.empty() ? "Empty" : "Not empty") << endl;
-
-    // c_str()
-    str = "Hello, C++!";
-    const char* cstr = str.c_str();
-    cout << "C-style string: " << cstr << endl;
-
-    // compare()
-    int cmp = str.compare("Hello, C++!");
-    cout << "Comparison result: " << cmp << endl;
-
-    // find_first_of()
-    size_t pos_first_vowel = str.find_first_of("aeiou");
-    cout << "First vowel at position: " << pos_first_vowel << endl;
-
-    // find_last_of()
-    size_t pos_last_vowel = str.find_last_of("aeiou");
-    cout << "Last vowel at position: " << pos_last_vowel << endl;
-
-    // find_first_not_of()
-    size_t pos_first_non_vowel = str.find_first_not_of("aeiou");
-    cout << "First non-vowel at position: " << pos_first_non_vowel << endl;
-
-    // find_last_not_of()
-    size_t pos_last_non_vowel = str.find_last_not_of("aeiou");
-    cout << "Last non-vowel at position: " << pos_last_non_vowel << endl;
+    string s2(it, --it2); // [0,3)
+    cout << s2 << endl;
 }
+void test2()
+{
+    string s1 = "hello";
+    string s2 = "world";
+    string s3 = s1 + "," + s2 + "!"; // 加号操作涉及3次内存操作（创建临时对象+拷贝构造+销毁临时对象）
+    cout << s3 << endl;
+}
+void test3()
+{
+    string s1 = "hello ";
+    cout << s1.size() << endl;
 
-int main(){
+    s1.push_back('x');
+    cout << s1 << endl;
+
+    s1.append(" world"); // append仅1次内存操作（直接修改原对象）
+    cout << s1 << endl;
+}
+int main()
+{
     test0();
-    cout << "#-------------------------#"<< endl;
+    cout << "#-------------------------#" << endl;
     test1();
+    cout << "#-------------------------#" << endl;
+    test2();
+    cout << "#-------------------------#" << endl;
+    test3();
     return 0;
 }
