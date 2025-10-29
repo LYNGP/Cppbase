@@ -368,5 +368,36 @@ int main()
 }
 ```
 
-3.  
+3. 缓冲机制分为三种类型：全缓冲、行缓冲和不带缓冲。
+    全缓冲：
+        刷新条件：缓冲区满时才执行实际I/O操作
+        典型应用：磁盘文件读写操作
+        补充说明：即使行缓冲流在缓冲区满时也会强制刷新
+    行缓冲：
+        刷新条件：遇到换行符时执行I/O操作
+        典型代表：标准输入cin，需按回车键才会刷新
+        特殊情形：缓冲区满时同样会触发刷新
+    不带缓冲：
+        特点：数据即时刷新，无缓冲过程
+        设计目的：确保关键信息立即输出
+        典型应用：标准错误输出cerr，用于紧急错误提示
+        优势说明：避免缓冲延迟，使错误信息能第一时间显示
 
+4. 文件输入输出流： 
+```cpp
+ifstream();
+explicit ifstream(const char* filename, openmode mode = ios_base::in);
+explicit ifstream(const string & filename, openmode mode = ios_base::in);
+
+ofstream();
+explicit ofstream(const char* filename, openmode mode = ios_base::out);
+explicit ofstream(const string & filename, openmode mode = ios_base::out);
+
+fstream();
+explicit fstream(const char* filename, openmode mode = ios_base::in|out);
+explicit fstream(const string & filename, openmode mode = ios_base::in|out);
+```
+    4.1 ifstream（文件输入流） 文件 → 文件输入流对象的缓冲区 → 程序中的数据结构
+    
+    ofstream（文件输出流）
+    fstream （文件输入输出流）
