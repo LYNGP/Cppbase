@@ -10,7 +10,7 @@ namespace SimpleLogger {
         if (initialized) return;
         
         auto console_sink = std::make_shared<spdlog::sinks::stdout_color_sink_mt>();
-        auto file_sink = std::make_shared<spdlog::sinks::basic_file_sink_mt>("demo.log", true);
+        auto file_sink = std::make_shared<spdlog::sinks::basic_file_sink_mt>("logs/demo.log", true);
         
         spdlog::sinks_init_list sink_list = {console_sink, file_sink};
         auto logger = std::make_shared<spdlog::logger>("guopeng", sink_list);

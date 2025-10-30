@@ -1,8 +1,8 @@
 # chmod +x run.sh
 # mkdir build
 cd build 
-make clean
-cmake ..
+# make clean
+# cmake ..
 make
 cd ..
 # cp ../bin/demo ..
