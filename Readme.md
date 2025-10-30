@@ -109,7 +109,7 @@ Computer & operator=(const Computer & rhs){
         指针判空：建议将nullptr写在判等左边，避免误写为赋值操作
 ```
 
-## cppbase day03：
+### cppbase day03：
 [C++字符串-string] 
 ```cpp
 #include <iostream>
@@ -289,7 +289,7 @@ int main()
 }
 ```
 
-## cppbase day04：
+### cppbase day04：
 
 [C++输入输出流]
 
@@ -397,7 +397,81 @@ fstream();
 explicit fstream(const char* filename, openmode mode = ios_base::in|out);
 explicit fstream(const string & filename, openmode mode = ios_base::in|out);
 ```
-    4.1 ifstream（文件输入流） 文件 → 文件输入流对象的缓冲区 → 程序中的数据结构
+
+ifstream（文件输入流） 文件 → 文件输入流对象的缓冲区 → 程序中的数据结构
+```cpp
+    void test2()
+{
+    ifstream ifs("test2.cc",std::ios::ate);//ate表示打开文件后将游标放在文件尾后
+
+    if (!ifs)
+    {
+        cerr << "ifs open file fail!";
+        return;
+    }
+
+    long length = ifs.tellg();   // 获取尾后下标，实际就是总的字符数
+    print("文件大小为：{}\n", length);
+
+    char *pdata = new char[length + 1]();
+    ifs.seekg(0, std::ios::beg); // std::ios::beg 表示文件开头
+    ifs.read(pdata, length);
+
+    // content包含了文件的所有内容，包括空格、换行
+    string content(pdata);
+    cout << "content:" << endl;
+    cout << content << endl;
+    /* cout << pdata << endl; */
+    ifs.close();
+}
+```
+ofstream（文件输出流）
+```cpp
+void test3()
+{
+    // 文件输出流绑定的文件对象如果不存在就创建
+    ofstream ofs("output.txt",std::ios::app);//使用默认std::ios::out模式会清空原有内容，指定std::ios::app可在文件末尾追加内容
+
+    if (!ofs)
+    {
+        cerr << "ofs open file fail!";
+        return;
+    }
+
+    string line("guopeng\n");
+    ofs << line;
+    ofs.close();
+}
+```
+5. 字符串流：
+```cpp
+//myserver.conf
+ip 192.168.0.0
+port 8888
+dir ~HaiBao/53th/day06
     
-    ofstream（文件输出流）
-    fstream （文件输入输出流）
+//readConf.cc
+void readConfig(const string & filename){
+    ifstream ifs(filename);
+    if(!ifs.good()){
+        cout << "open file fail!" << endl;
+        return;
+    }
+    
+    string line;
+    string key, value;
+    while(getline(ifs,line)){
+        istringstream iss(line);
+        iss >> key >> value;
+        cout << key << " -----> " << value << endl; 
+    }
+}
+
+void test0(){
+    readConfig("myserver.conf");
+}
+```
+
+### cppbase day05：
+
+[日志系统]

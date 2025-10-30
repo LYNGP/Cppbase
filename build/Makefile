@@ -130,17 +130,17 @@ core_lib/fast:
 .PHONY : core_lib/fast
 
 #=============================================================================
-# Target rules for targets named lyn
+# Target rules for targets named demo
 
 # Build rule for target.
-lyn: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lyn
-.PHONY : lyn
+demo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 demo
+.PHONY : demo
 
 # fast build rule for target.
-lyn/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lyn.dir/build.make CMakeFiles/lyn.dir/build
-.PHONY : lyn/fast
+demo/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/build
+.PHONY : demo/fast
 
 src/computer.o: src/computer.cpp.o
 .PHONY : src/computer.o
@@ -166,36 +166,12 @@ src/computer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_lib.dir/build.make CMakeFiles/core_lib.dir/src/computer.cpp.s
 .PHONY : src/computer.cpp.s
 
-src/log.o: src/log.cpp.o
-.PHONY : src/log.o
-
-# target to build an object file
-src/log.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_lib.dir/build.make CMakeFiles/core_lib.dir/src/log.cpp.o
-.PHONY : src/log.cpp.o
-
-src/log.i: src/log.cpp.i
-.PHONY : src/log.i
-
-# target to preprocess a source file
-src/log.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_lib.dir/build.make CMakeFiles/core_lib.dir/src/log.cpp.i
-.PHONY : src/log.cpp.i
-
-src/log.s: src/log.cpp.s
-.PHONY : src/log.s
-
-# target to generate assembly for a file
-src/log.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_lib.dir/build.make CMakeFiles/core_lib.dir/src/log.cpp.s
-.PHONY : src/log.cpp.s
-
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lyn.dir/build.make CMakeFiles/lyn.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -203,7 +179,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lyn.dir/build.make CMakeFiles/lyn.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -211,7 +187,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lyn.dir/build.make CMakeFiles/lyn.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 # Help Target
@@ -223,13 +199,10 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... core_lib"
-	@echo "... lyn"
+	@echo "... demo"
 	@echo "... src/computer.o"
 	@echo "... src/computer.i"
 	@echo "... src/computer.s"
-	@echo "... src/log.o"
-	@echo "... src/log.i"
-	@echo "... src/log.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

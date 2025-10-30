@@ -93,6 +93,7 @@ lyn_EXTERNAL_OBJECTS =
 ../lyn: CMakeFiles/lyn.dir/src/main.cpp.o
 ../lyn: CMakeFiles/lyn.dir/build.make
 ../lyn: libcore_lib.a
+../lyn: /usr/lib/aarch64-linux-gnu/libspdlog.so.1.9.2
 ../lyn: /usr/lib/aarch64-linux-gnu/libfmt.so.8.1.1
 ../lyn: CMakeFiles/lyn.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/HwHiAiUser/gp/Cppbase/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../lyn"

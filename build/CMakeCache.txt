@@ -221,6 +221,9 @@ demo_SOURCE_DIR:STATIC=/home/HwHiAiUser/gp/Cppbase
 //The directory containing a CMake configuration file for fmt.
 fmt_DIR:PATH=/usr/lib/aarch64-linux-gnu/cmake/fmt
 
+//The directory containing a CMake configuration file for spdlog.
+spdlog_DIR:PATH=/usr/lib/aarch64-linux-gnu/cmake/spdlog
+
 
 ########################
 # INTERNAL cache entries
@@ -304,6 +307,10 @@ CMAKE_GENERATOR_INSTANCE:INTERNAL=
 CMAKE_GENERATOR_PLATFORM:INTERNAL=
 //Name of generator toolset.
 CMAKE_GENERATOR_TOOLSET:INTERNAL=
+//Test CMAKE_HAVE_LIBC_PTHREAD
+CMAKE_HAVE_LIBC_PTHREAD:INTERNAL=1
+//Have include pthread.h
+CMAKE_HAVE_PTHREAD_H:INTERNAL=1
 //Source directory with the top level CMakeLists.txt file for this
 // project
 CMAKE_HOME_DIRECTORY:INTERNAL=/home/HwHiAiUser/gp/Cppbase
@@ -369,4 +376,6 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding Threads
+FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 

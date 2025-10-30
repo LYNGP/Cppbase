@@ -1,5 +1,4 @@
 #include "computer.hpp"
-#include "cplusplus.hpp"
 
 using std::cout;
 using std::endl;

@@ -1,4 +1,4 @@
 /home/HwHiAiUser/gp/Cppbase/build/CMakeFiles/core_lib.dir
-/home/HwHiAiUser/gp/Cppbase/build/CMakeFiles/lyn.dir
+/home/HwHiAiUser/gp/Cppbase/build/CMakeFiles/demo.dir
 /home/HwHiAiUser/gp/Cppbase/build/CMakeFiles/edit_cache.dir
 /home/HwHiAiUser/gp/Cppbase/build/CMakeFiles/rebuild_cache.dir

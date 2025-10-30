@@ -1,10 +1,10 @@
 # chmod +x run.sh
 # mkdir build
 cd build 
-# cmake ..
+make clean
+cmake ..
 make
+cd ..
 # cp ../bin/demo ..
-git config --global user.name "LYNGP"
-git config --global user.email "544751134@qq.com"
-
-
+# git config --global user.name "LYNGP"
+# git config --global user.email "544751134@qq.com"

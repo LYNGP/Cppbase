@@ -1,0 +1,116 @@
+#include <iostream>
+
+// spdlog 核心头文件
+#include <spdlog/spdlog.h>
+// 彩色控制台输出 sink（输出目标）
+#include <spdlog/sinks/stdout_color_sinks.h>
+// 基础文件输出 sink
+#include <spdlog/sinks/basic_file_sink.h>
+
+/**
+ * 测试函数0：使用全局默认 logger
+ * 这是最简单的使用方式，类似于 printf
+ */
+void test0()
+{
+    // 设置全局日志级别为 debug（最详细的级别）
+    // 级别从低到高：trace < debug < info < warn < error < critical
+    spdlog::set_level(spdlog::level::debug);
+
+    // 使用全局默认 logger 输出不同级别的日志
+    spdlog::debug("This is a debug message");    // 调试信息
+    spdlog::info("This is an info message");     // 一般信息
+    spdlog::warn("This is a warning message");   // 警告信息
+    spdlog::error("This is an error message");   // 错误信息
+}
+
+/**
+ * 测试函数1：创建多个独立的 logger
+ * 演示如何为不同目的创建专门的 logger
+ */
+void test1()
+{
+    // 创建一个彩色控制台 logger，名字叫 "logger"
+    // stdout_color_mt 中的 _mt 表示 multi-threaded（多线程安全）
+    auto console = spdlog::stdout_color_mt("logger");
+
+    // 创建一个文件 logger，输出到 "logs/logfile.log"
+    // basic_logger_mt 创建基础文件日志器
+    auto file = spdlog::basic_logger_mt("file_logger", "logs/logfile.log");
+
+    // 为不同的 logger 设置不同的日志级别
+    file->set_level(spdlog::level::debug);    // 文件记录详细信息（debug及以上）
+    console->set_level(spdlog::level::info);  // 控制台只显示重要信息（info及以上）
+
+    // 向文件 logger 输出各级别日志
+    file->debug("This debug message will be written to the file");
+    file->info("This is an info message");
+    file->warn("This is a warning message");
+    file->error("This is an error message");
+
+    // 向控制台 logger 输出各级别日志
+    console->debug("This debug message will not be displayed");  // 不会显示，因为级别太低
+    console->info("This is an info message");     // 会显示
+    console->warn("This is a warning message");   // 会显示
+    console->error("This is an error message");   // 会显示
+}
+
+/**
+ * 测试函数2：使用多 sink 的 logger
+ * 这是最强大的方式：一个 logger 可以同时输出到多个目标
+ */
+void test2()
+{
+    // 第一步：创建各种 sink（输出目标）
+    
+    // 创建控制台 sink（带颜色）
+    auto consolesink = std::make_shared<spdlog::sinks::stdout_color_sink_mt>();
+    
+    // 用控制台 sink 创建一个 logger（这里只是演示，实际不会用到）
+    auto consolelogger = std::make_shared<spdlog::logger>("consolelogger", consolesink);
+
+    // 创建文件 sink，第二个参数 true 表示截断模式（覆盖现有文件）
+    auto filesink = std::make_shared<spdlog::sinks::basic_file_sink_mt>("logs/multisinklog.log", true);
+    
+    // 用文件 sink 创建一个 logger（这里只是演示，实际不会用到）
+    auto filelogger = std::make_shared<spdlog::logger>("filelogger", filesink);
+
+    // 第二步：创建多 sink 的 logger
+    
+    // 创建 sink 列表，包含控制台和文件两个输出目标
+    spdlog::sinks_init_list sink_list = {consolesink, filesink};
+    
+    // 创建一个 logger，它会同时向控制台和文件输出
+    auto multilogger = std::make_shared<spdlog::logger>("multilogger", sink_list.begin(), sink_list.end());
+
+    // 第三步：设置为默认 logger
+    
+    // 将我们创建的多 sink logger 设置为全局默认 logger
+    // 这样之后调用 spdlog::info() 等函数就会使用这个 logger
+    spdlog::set_default_logger(multilogger);
+
+    // 设置全局日志级别
+    spdlog::set_level(spdlog::level::debug);
+
+    // 第四步：使用全局函数输出日志
+    // 这些日志会同时出现在控制台和文件中！
+    
+    spdlog::info("This is an info message for both console and file");
+    spdlog::error("This is an error message for both console and file");
+
+    spdlog::debug("This is a debug message for both console and file");
+    spdlog::info("This is an info message for both console and file");
+    spdlog::warn("This is a warning message for both console and file");
+    spdlog::error("This is an error message for both console and file");
+
+    // 清理：删除所有已注册的 logger
+    // 这是一个好习惯，确保程序结束时正确清理资源
+    spdlog::drop_all();
+}
+
+int main()
+{
+    // 只运行 test2()，你可以改成 test0() 或 test1() 来测试其他功能
+    test2();
+    return 0;
+}

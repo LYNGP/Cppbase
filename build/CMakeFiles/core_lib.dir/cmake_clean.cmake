@@ -1,8 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/core_lib.dir/src/computer.cpp.o"
   "CMakeFiles/core_lib.dir/src/computer.cpp.o.d"
-  "CMakeFiles/core_lib.dir/src/log.cpp.o"
-  "CMakeFiles/core_lib.dir/src/log.cpp.o.d"
   "libcore_lib.a"
   "libcore_lib.pdb"
 )
