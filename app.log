@@ -1,10 +1,9 @@
-#include <iostream>
+[2025-10-30 14:33:52.082] [app] [info] 文件大小为：2677
+[2025-10-30 14:33:52.082] [app] [info] #include <iostream>
 #include <fstream>
 #include <fmt/format.h>
 #include <filesystem>
 #include <string>
-#include "logger.hpp"
-
 using fmt::print;
 using std::cerr;
 using std::cout;
@@ -51,7 +50,7 @@ void test1()
     ifs.seekg(0, std::ios::end); // std::ios::end 表示文件尾后
     long length = ifs.tellg();   // 获取尾后下标，实际就是总的字符数
     // cout << length << endl;
-    LOG_INFO("文件大小为：{}", length);
+    print("文件大小为：{}\n", length);
 
     char *pdata = new char[length + 1]();
     // 需要将游标再放置到文件开头
@@ -60,23 +59,24 @@ void test1()
 
     // content包含了文件的所有内容，包括空格、换行
     string content(pdata);
-    LOG_INFO("\n{}", content);
+    cout << "content:" << endl;
+    cout << content << endl;
     /* cout << pdata << endl; */
     ifs.close();
 }
 
 void test2()
 {
-    ifstream ifs("文件io.txt", std::ios::ate); // ate表示打开文件后将游标放在文件尾后
+    ifstream ifs("test2.cc", std::ios::ate); // ate表示打开文件后将游标放在文件尾后
 
     if (!ifs)
     {
-        LOG_ERROR("ifs open file fail!");
+        cerr << "ifs open file fail!";
         return;
     }
 
     long length = ifs.tellg(); // 获取尾后下标，实际就是总的字符数
-    LOG_INFO("文件大小为：{}", length);
+    print("文件大小为：{}\n", length);
 
     char *pdata = new char[length + 1]();
     ifs.seekg(0, std::ios::beg); // std::ios::beg 表示文件开头
@@ -84,18 +84,19 @@ void test2()
 
     // content包含了文件的所有内容，包括空格、换行
     string content(pdata);
-    LOG_INFO("\n{}", content);
-
+    cout << "content:" << endl;
+    cout << content << endl;
+    /* cout << pdata << endl; */
     ifs.close();
 }
 void test3()
 {
     // 文件输出流绑定的文件对象如果不存在就创建
-    ofstream ofs("output.txt", std::ios::app); // 使用默认std::ios::out模式会清空原有内容，指定std::ios::app可在文件末尾追加内容
+    ofstream ofs("output.txt",std::ios::app);//使用默认std::ios::out模式会清空原有内容，指定std::ios::app可在文件末尾追加内容
 
     if (!ofs)
     {
-        LOG_ERROR("ofs open file fail!");
+        cerr << "ofs open file fail!";
         return;
     }
 
@@ -106,7 +107,6 @@ void test3()
 
 int main()
 {
-    INIT_LOGGER();
-    test2();
+    test3();
     return 0;
 }
