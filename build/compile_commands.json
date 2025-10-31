@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/HwHiAiUser/gp/Cppbase/build",
+  "command": "/usr/bin/aarch64-linux-gnu-g++ -DDEBUG -I/home/HwHiAiUser/gp/Cppbase/include -g -o CMakeFiles/core_lib.dir/src/computer.cpp.o -c /home/HwHiAiUser/gp/Cppbase/src/computer.cpp",
+  "file": "/home/HwHiAiUser/gp/Cppbase/src/computer.cpp"
+},
+{
+  "directory": "/home/HwHiAiUser/gp/Cppbase/build",
+  "command": "/usr/bin/aarch64-linux-gnu-g++ -DFMT_LOCALE -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -I/home/HwHiAiUser/gp/Cppbase/include -g -o CMakeFiles/demo.dir/src/main.cpp.o -c /home/HwHiAiUser/gp/Cppbase/src/main.cpp",
+  "file": "/home/HwHiAiUser/gp/Cppbase/src/main.cpp"
+}
+]

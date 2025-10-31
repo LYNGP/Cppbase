@@ -1,44 +1,48 @@
 #include <iostream>
 #include "logger.hpp"
 
+#include <algorithm>
+
 using std::cout;
 using std::endl;
+using std::string;
+using std::vector;
+// 统计一篇英文文章中出现的单词与词频
 
-class Point
+struct Record
 {
-public:
-    Point(int x, int y)
-        : _ix(x), _iy(y)
-    {
-    }
-    // 声明友元关系，这个函数可访问类的私有成员
-    friend float distance(const Point &lhs, const Point &rhs);
-
-private:
-    int _ix;
-    int _iy;
+    Record(const string &word, int freq) : _word(word), _freq(freq) {}
+    string _word;
+    int _freq;
 };
 
-// 参数设计：
-// 引用传递：避免对象拷贝带来的性能开销
-// const修饰：防止函数内部意外修改对象状态
-// 右值绑定：const引用可以绑定右值对象
-float distance(const Point &lhs, const Point &rhs)
+class Dictionary
 {
-    return sqrt((lhs._ix - rhs._ix) * (lhs._ix - rhs._ix) +
-                (lhs._iy - rhs._iy) * (lhs._iy - rhs._iy));
-}
+public:
+    void read(const string &filename);
+    void store(const string &filename);
+
+private:
+    vector<Record> _dict;
+};
 
 void test0()
 {
-    Point p1(0, 0);
-    Point p2(3, 4);
-    LOG_INFO("distance {}", distance(p1, p2));
 }
 
 int main()
 {
-    INIT_LOGGER();
+    LOG_INIT();
     test0();
+
     return 0;
+    LOG_CLEANUP();
+}
+
+void Dictionary::read(const string &filename)
+{
+}
+
+void Dictionary::store(const string &filename)
+{
 }

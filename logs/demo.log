@@ -1,1 +1,53 @@
-[2025-10-30 15:06:43.487] [guopeng] [info] distance 5
+[2025-10-31 10:11:12.938] [guopeng] [debug] 这是 debug 信息
+[2025-10-31 10:11:12.938] [guopeng] [info] 程序正常运行
+[2025-10-31 10:11:12.938] [guopeng] [warning] 注意：磁盘空间不足
+[2025-10-31 10:11:12.938] [guopeng] [error] 错误：无法连接数据库
+[2025-10-31 10:11:12.938] [guopeng] [critical] 致命：系统崩溃
+[2025-10-31 10:22:07.334] [guopeng] [trace] [main.cpp:39] 这是 trace 信息
+[2025-10-31 10:22:07.334] [guopeng] [debug] [main.cpp:40] 这是 debug 信息
+[2025-10-31 10:22:07.334] [guopeng] [info] [main.cpp:41] 程序正常运行
+[2025-10-31 10:22:07.334] [guopeng] [warning] [main.cpp:42] 注意：磁盘空间不足
+[2025-10-31 10:22:07.334] [guopeng] [error] [main.cpp:43] 错误：无法连接数据库
+[2025-10-31 10:22:07.334] [guopeng] [critical] [main.cpp:44] 致命：系统崩溃
+[2025-10-31 10:22:08.485] [guopeng] [trace] [main.cpp:39] 这是 trace 信息
+[2025-10-31 10:22:08.485] [guopeng] [debug] [main.cpp:40] 这是 debug 信息
+[2025-10-31 10:22:08.485] [guopeng] [info] [main.cpp:41] 程序正常运行
+[2025-10-31 10:22:08.485] [guopeng] [warning] [main.cpp:42] 注意：磁盘空间不足
+[2025-10-31 10:22:08.485] [guopeng] [error] [main.cpp:43] 错误：无法连接数据库
+[2025-10-31 10:22:08.485] [guopeng] [critical] [main.cpp:44] 致命：系统崩溃
+[2025-10-31 10:22:09.166] [guopeng] [trace] [main.cpp:39] 这是 trace 信息
+[2025-10-31 10:22:09.166] [guopeng] [debug] [main.cpp:40] 这是 debug 信息
+[2025-10-31 10:22:09.166] [guopeng] [info] [main.cpp:41] 程序正常运行
+[2025-10-31 10:22:09.166] [guopeng] [warning] [main.cpp:42] 注意：磁盘空间不足
+[2025-10-31 10:22:09.166] [guopeng] [error] [main.cpp:43] 错误：无法连接数据库
+[2025-10-31 10:22:09.166] [guopeng] [critical] [main.cpp:44] 致命：系统崩溃
+[2025-10-31 10:22:09.685] [guopeng] [trace] [main.cpp:39] 这是 trace 信息
+[2025-10-31 10:22:09.685] [guopeng] [debug] [main.cpp:40] 这是 debug 信息
+[2025-10-31 10:22:09.685] [guopeng] [info] [main.cpp:41] 程序正常运行
+[2025-10-31 10:22:09.685] [guopeng] [warning] [main.cpp:42] 注意：磁盘空间不足
+[2025-10-31 10:22:09.685] [guopeng] [error] [main.cpp:43] 错误：无法连接数据库
+[2025-10-31 10:22:09.685] [guopeng] [critical] [main.cpp:44] 致命：系统崩溃
+[2025-10-31 10:22:25.847] [guopeng] [trace] [main.cpp:39] 这是 trace 信息
+[2025-10-31 10:22:25.847] [guopeng] [debug] [main.cpp:40] 这是 debug 信息
+[2025-10-31 10:22:25.847] [guopeng] [info] [main.cpp:41] 程序正常运行
+[2025-10-31 10:22:25.847] [guopeng] [warning] [main.cpp:42] 注意：磁盘空间不足
+[2025-10-31 10:22:25.847] [guopeng] [error] [main.cpp:43] 错误：无法连接数据库
+[2025-10-31 10:22:25.847] [guopeng] [critical] [main.cpp:44] 致命：系统崩溃
+[2025-10-31 10:22:27.525] [guopeng] [trace] [main.cpp:39] 这是 trace 信息
+[2025-10-31 10:22:27.525] [guopeng] [debug] [main.cpp:40] 这是 debug 信息
+[2025-10-31 10:22:27.525] [guopeng] [info] [main.cpp:41] 程序正常运行
+[2025-10-31 10:22:27.525] [guopeng] [warning] [main.cpp:42] 注意：磁盘空间不足
+[2025-10-31 10:22:27.525] [guopeng] [error] [main.cpp:43] 错误：无法连接数据库
+[2025-10-31 10:22:27.525] [guopeng] [critical] [main.cpp:44] 致命：系统崩溃
+[2025-10-31 10:22:28.351] [guopeng] [trace] [main.cpp:39] 这是 trace 信息
+[2025-10-31 10:22:28.351] [guopeng] [debug] [main.cpp:40] 这是 debug 信息
+[2025-10-31 10:22:28.351] [guopeng] [info] [main.cpp:41] 程序正常运行
+[2025-10-31 10:22:28.351] [guopeng] [warning] [main.cpp:42] 注意：磁盘空间不足
+[2025-10-31 10:22:28.351] [guopeng] [error] [main.cpp:43] 错误：无法连接数据库
+[2025-10-31 10:22:28.351] [guopeng] [critical] [main.cpp:44] 致命：系统崩溃
+[2025-10-31 10:22:29.471] [guopeng] [trace] [main.cpp:39] 这是 trace 信息
+[2025-10-31 10:22:29.471] [guopeng] [debug] [main.cpp:40] 这是 debug 信息
+[2025-10-31 10:22:29.471] [guopeng] [info] [main.cpp:41] 程序正常运行
+[2025-10-31 10:22:29.471] [guopeng] [warning] [main.cpp:42] 注意：磁盘空间不足
+[2025-10-31 10:22:29.471] [guopeng] [error] [main.cpp:43] 错误：无法连接数据库
+[2025-10-31 10:22:29.471] [guopeng] [critical] [main.cpp:44] 致命：系统崩溃

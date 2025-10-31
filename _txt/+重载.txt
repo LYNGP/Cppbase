@@ -1,0 +1,49 @@
+#include <iostream>
+#include "logger.hpp"
+// 实现一个复数类，复数分为实部和虚部，重载+运算符，使其能够处理两个复数之间的加法运算（实部加实部，虚部加虚部）
+using std::cout;
+using std::endl;
+
+class Complex
+{
+public:
+    Complex(double real, double imag) : _real(real), _imag(imag) {}
+    Complex operator+(const Complex &other) const
+    {
+        return Complex(_real + other._real, _imag + other._imag);
+    }
+    void print() const
+    {
+        cout << _real << "+" << _imag << "i" << endl;
+    }
+
+private:
+    double _real;
+    double _imag;
+};
+
+void test0()
+{
+    Complex a(1, 2);
+    Complex b(3, 4);
+    Complex c = a + b; // 本质是Complex c = a.operator+(b)
+    c.print();
+}
+
+
+int main() {
+    LOG_INIT(spdlog::level::warn);  // 只显示 warn 及以上级别
+    // LOG_INIT_APPEND(); 
+    test0();
+    // 测试不同级别的日志
+    LOG_TRACE("这是 trace 信息");      // 最详细
+    LOG_DEBUG("这是 debug 信息");      // 调试用
+    LOG_INFO("程序正常运行");           // 一般信息
+    LOG_WARN("注意：磁盘空间不足");      // 警告
+    LOG_ERROR("错误：无法连接数据库");   // 错误
+    LOG_CRITICAL("致命：系统崩溃");     // 致命错误
+    
+    LOG_CLEANUP();
+    return 0;
+}
+

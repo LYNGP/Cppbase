@@ -71,6 +71,7 @@
         "bitset": "cpp",
         "optional": "cpp",
         "typeindex": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "友元,txt": "cpp"
     }
 }

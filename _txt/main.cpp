@@ -106,7 +106,7 @@ void test3()
 
 int main()
 {
-    INIT_LOGGER();
+    LOG_INIT();
     test2();
     return 0;
 }

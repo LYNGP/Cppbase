@@ -73,15 +73,15 @@ CMakeFiles/core_lib.dir/src/computer.cpp.o: CMakeFiles/core_lib.dir/flags.make
 CMakeFiles/core_lib.dir/src/computer.cpp.o: ../src/computer.cpp
 CMakeFiles/core_lib.dir/src/computer.cpp.o: CMakeFiles/core_lib.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/HwHiAiUser/gp/Cppbase/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/core_lib.dir/src/computer.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/core_lib.dir/src/computer.cpp.o -MF CMakeFiles/core_lib.dir/src/computer.cpp.o.d -o CMakeFiles/core_lib.dir/src/computer.cpp.o -c /home/HwHiAiUser/gp/Cppbase/src/computer.cpp
+	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/core_lib.dir/src/computer.cpp.o -MF CMakeFiles/core_lib.dir/src/computer.cpp.o.d -o CMakeFiles/core_lib.dir/src/computer.cpp.o -c /home/HwHiAiUser/gp/Cppbase/src/computer.cpp
 
 CMakeFiles/core_lib.dir/src/computer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/core_lib.dir/src/computer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/HwHiAiUser/gp/Cppbase/src/computer.cpp > CMakeFiles/core_lib.dir/src/computer.cpp.i
+	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/HwHiAiUser/gp/Cppbase/src/computer.cpp > CMakeFiles/core_lib.dir/src/computer.cpp.i
 
 CMakeFiles/core_lib.dir/src/computer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core_lib.dir/src/computer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/HwHiAiUser/gp/Cppbase/src/computer.cpp -o CMakeFiles/core_lib.dir/src/computer.cpp.s
+	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/HwHiAiUser/gp/Cppbase/src/computer.cpp -o CMakeFiles/core_lib.dir/src/computer.cpp.s
 
 # Object files for target core_lib
 core_lib_OBJECTS = \
