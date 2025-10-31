@@ -108,6 +108,27 @@ Computer & operator=(const Computer & rhs){
         拷贝控制：使用=delete删除拷贝构造和赋值运算符，严格禁止复制
         指针判空：建议将nullptr写在判等左边，避免误写为赋值操作
 ```
+3. 
+什么是线程安全？
+    在拥有共享数据的多条线程并行执行的程序中，线程安全的代码会通过同步机制保证各个线程都可以正常且正确的执行，不会出现数据污染等意外情况。
+
+如何保证线程安全？
+    给共享的资源加把锁，保证每个资源变量每时每刻至多被一个线程占用。
+    让线程也拥有资源，不用去共享进程中的资源。如： 使用threadlocal可以为每个线程的维护一个私有的本地变量。
+
+什么是单例模式？
+    单例模式指在整个系统生命周期里，保证一个类只能产生一个实例，确保该类的唯一性。
+    
+单例模式分类
+    单例模式可以分为懒汉式和饿汉式，两者之间的区别在于创建实例的时间不同：
+    懒汉式：指系统运行中，实例并不存在，只有当需要使用该实例时，才会去创建并使用实例。（这种方式要考虑线程安全）
+    饿汉式：指系统一运行，就初始化创建实例，当需要时，直接调用即可。（本身就线程安全，没有多线程的问题）
+
+单例类特点
+    构造函数和析构函数为private类型，目的禁止外部构造和析构
+    拷贝构造和赋值构造函数为private类型，目的是禁止外部拷贝和赋值，确保实例的唯一性
+    类里有个获取实例的静态函数，可以全局访问
+
 
 ### cppbase day03：
 [C++字符串-string] 
@@ -490,3 +511,128 @@ void test0(){
 2. 其优先级和结合性还是固定不变的
 3. 操作符的操作数个数是保持不变的
 4. 运算符重载时 ，不能设置默认参数
+
+[+、++、<<、>>运算符重载]
+```cpp
+#include <iostream>
+#include "logger.hpp"
+
+using std::cin;
+using std::cout;
+using std::endl;
+using std::istream;
+using std::ostream;
+
+void input_int_num(istream &is, int &num)
+{
+    while (1)
+    {
+        cout << "请输入一个整数: ";
+        if (cin >> num)
+        {
+            break;
+        }
+        else
+        {
+            cout << "输入错误,请重试" << endl;
+            cin.clear();
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        }
+    }
+}
+
+class Complex
+{
+public:
+    Complex(double real, double imag) : _real(real), _imag(imag) {}
+    Complex operator+(const Complex &other) const
+    {
+        LOG_INFO("+号运算符重载");
+        return Complex(_real + other._real, _imag + other._imag);
+    }
+    Complex &operator++()
+    {
+        LOG_INFO("前置++ 运算符重载");
+
+        ++_real;
+        ++_imag;
+        return *this;
+    }
+    Complex operator++(int)
+    {
+        LOG_INFO("后置++ 运算符重载");
+
+        Complex temp = *this;
+        ++_real;
+        ++_imag;
+        return temp;
+    }
+
+    void print() const
+    {
+        LOG_INFO("Complex number: {} + {}i", _real, _imag);
+    }
+
+    friend ostream &operator<<(ostream &os, const Complex &rhs);
+    friend istream &operator>>(istream &is, Complex &rhs);
+
+private:
+    int _real;
+    int _imag;
+};
+
+ostream &operator<<(ostream &os, const Complex &rhs)
+{
+    // LOG_INFO("输出运算符<< 重载");
+    os << rhs._real << "+" << rhs._imag << "i";
+    return os;
+}
+istream &operator>>(istream &is, Complex &rhs)
+{
+    // LOG_INFO("输入运算符>> 重载");
+    // is >> rhs._real;
+    input_int_num(is, rhs._real);
+    // is >> rhs._imag;
+    input_int_num(is, rhs._imag);
+
+    return is;
+}
+
+void test1()
+{
+    Complex c1(1, 2);
+    Complex c2(3, 4);
+    Complex c3 = c1 + c2;
+    cout << "c3 = " << c3 << endl; // operator<<(cout, c3); /*本质*/
+
+    ++c3; // c3.operator++();    /*本质*/
+    c3++; // c3.operator++(int); /*本质*/
+
+    cout << "After ++, c3 = " << c3 << endl;
+
+    Complex c4(0, 0);
+    cin >> c4; // operator>>(cin, c4); /*本质*/
+    cout << "c4 = " << c4 << endl;
+}
+
+int main()
+{
+    LOG_INIT();
+    // LOG_INIT_APPEND();
+    test1();
+
+    return 0;
+    LOG_CLEANUP();
+}
+
+```
+
+[std::string的底层实现]
+基本上有三种方式：
+- Eager Copy(深拷贝) --> 在不需要改变字符串内容时，对字符串进行频繁复制，效率比较低下
+- COW（Copy-On-Write 写时复制）
+- SSO(Short String Optimization 短字符串优化)
+    目前std::string是根据SSO的思想实现的，
+    当字符串的字符数小于等于15时，buffer直接存放整个字符串；
+    当字符串的字符数大于15时buffer 存放的就是一个指针，指向堆空间的区域。
+    这样做的好处是，当字符串较小时，直接拷贝字符串，放在 string内部，不用获取堆空间，开销小。

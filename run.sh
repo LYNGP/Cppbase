@@ -3,7 +3,7 @@
 cd build 
 # make clean
 # cmake ..
-make
+make -j8
 cd ..
 # cp ../bin/demo ..
 # git config --global user.name "LYNGP"

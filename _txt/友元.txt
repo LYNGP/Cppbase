@@ -1,0 +1,55 @@
+#include <iostream>
+#include "logger.hpp"
+
+using std::cout;
+using std::endl;
+
+class Point
+{
+public:
+    Point(int x, int y)
+        : _ix(x), _iy(y)
+    {
+    }
+    // 声明友元关系，普通函数可访问类的私有成员
+    // friend float distance(const Point &lhs, const Point &rhs);
+
+    // 友元类，不同类之间
+    friend class Line;
+
+private:
+    int _ix;
+    int _iy;
+};
+
+class Line
+{
+public:
+    // 参数设计：
+    // 引用传递：避免对象拷贝带来的性能开销
+    // const修饰：防止函数内部意外修改对象状态
+    // 右值绑定：const引用可以绑定右值对象
+    float distance(const Point &lhs, const Point &rhs)
+    {
+        return sqrt((lhs._ix - rhs._ix) * (lhs._ix - rhs._ix) +
+                    (lhs._iy - rhs._iy) * (lhs._iy - rhs._iy));
+    }
+    void setX(Point &rhs, int x)
+    {
+        rhs._ix = x;
+    }
+};
+
+void test0()
+{
+    Point p1(0, 0);
+    Point p2(3, 4);
+    LOG_INFO("distance {}", Line().distance(p1, p2));
+}
+
+int main()
+{
+    LOG_INIT();
+    test0();
+    return 0;
+}

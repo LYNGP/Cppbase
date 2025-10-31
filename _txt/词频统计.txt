@@ -1,0 +1,122 @@
+#include <iostream>
+#include "logger.hpp"
+
+#include <algorithm>
+#include <fstream>
+#include <sstream>
+
+using std::cout;
+using std::endl;
+using std::ifstream;
+using std::istringstream;
+using std::ofstream;
+using std::string;
+using std::vector;
+
+// 统计一篇英文文章中出现的单词与词频
+
+struct Record
+{
+    Record(const string &word, int freq) : _word(word), _freq(freq) {}
+    string _word;
+    int _freq;
+};
+
+class Dictionary
+{
+public:
+    void read(const string &filename);
+    string dealword(const string &word);
+    void insert(const string &word);
+    void store(const string &filename);
+
+private:
+    vector<Record> _dict;
+};
+
+void test0()
+{
+    Dictionary dict;
+    dict.read("The_Holy_Bible.txt");
+    dict.store("output.txt");
+}
+
+int main()
+{
+    LOG_INIT();
+    test0();
+
+    return 0;
+    LOG_CLEANUP();
+}
+
+void Dictionary::read(const string &filename)
+{
+    ifstream ifs(filename);
+    if (!ifs)
+    {
+        LOG_ERROR("无法打开文件: {}", filename);
+        return;
+    }
+
+    string line;
+    while (std::getline(ifs, line))
+    {
+        istringstream iss(line);
+        string word;
+        while (iss >> word)
+        {
+            string clean_word = dealword(word); // 处理单词，去掉标点符号等
+
+            insert(clean_word); // 插入字典
+        }
+    }
+    sort(_dict.begin(), _dict.end(),
+         [](const Record &a, const Record &b)
+         {
+             return a._freq > b._freq; // 高频词在前
+         });
+
+    ifs.close();
+}
+
+string Dictionary::dealword(const string &word)
+{
+    for (auto &ch : word)
+    {
+        if (!isalpha(ch))
+            return string();
+    }
+    return word;
+}
+
+void Dictionary::insert(const string &word)
+{
+    if (word.empty())
+        return;
+    for (auto &record : _dict)
+    {
+        if (record._word == word)
+        {
+            record._freq++;
+            return;
+        }
+    }
+    _dict.emplace_back(word, 1);
+}
+
+void Dictionary::store(const string &filename)
+{
+    ofstream ofs(filename);
+    if (!ofs)
+    {
+        LOG_ERROR("无法打开文件: {}", filename);
+        return;
+    }
+
+    for (const auto &record : _dict)
+    {
+        ofs << record._word << " " << record._freq << endl;
+    }
+    ofs.close();
+}

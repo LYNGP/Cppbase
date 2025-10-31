@@ -42,8 +42,9 @@ namespace SimpleLogger {
 
 // 使用宏简化调用
 #define LOG_INIT_APPEND() SimpleLogger::Init(spdlog::level::info, true)   // 追加模式
-#define LOG_INIT(...) SimpleLogger::Init(__VA_ARGS__)// 覆盖模式
-#define LOG_SET_LEVEL(level) SimpleLogger::SetLevel(level)
+#define LOG_INIT() SimpleLogger::Init(spdlog::level::info, false)  // 覆盖模式
+// #define LOG_INIT(...) SimpleLogger::Init(__VA_ARGS__)// 覆盖模式
+// #define LOG_SET_LEVEL(level) SimpleLogger::SetLevel(level)
 #define LOG_CLEANUP() SimpleLogger::Cleanup()
 
 #define LOG_TRACE(...) SPDLOG_TRACE(__VA_ARGS__)
